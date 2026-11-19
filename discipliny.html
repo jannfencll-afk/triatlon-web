@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triathlon Hub - Disciplíny</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <!-- HLAVIČKA A MENU -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-stopwatch-fill text-warning me-2"></i>TRIATHLON HUB
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hlavniNavigace">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="hlavniNavigace">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house me-1"></i>Úvod</a></li>
+          <li class="nav-item"><a class="nav-link active" href="discipliny.html"><i class="bi bi-water me-1"></i>Disciplíny</a></li>
+          <li class="nav-item"><a class="nav-link" href="vysledky.html"><i class="bi bi-trophy me-1"></i>Výsledky</a></li>
+          <li class="nav-item"><a class="nav-link" href="registrace.html"><i class="bi bi-pencil-square me-1"></i>Registrace</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontakt.html"><i class="bi bi-envelope me-1"></i>Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- DROBEČKOVÁ NAVIGACE -->
+  <div class="bg-white border-bottom py-2">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Domů</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Disciplíny</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- OBSAH STRÁNKY -->
+  <main class="container my-5 flex-grow-1">
+    <section class="bg-white p-4 rounded shadow-sm">
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h1 class="h2 fw-bold mb-0">Specifika triatlonových disciplín</h1>
+        <button type="button" class="btn btn-warning text-dark fw-bold" data-bs-toggle="modal" data-bs-target="#regeneraceModal">
+          <i class="bi bi-heart-pulse-fill me-1"></i>Regenerační protokol
+        </button>
+      </div>
+
+      <!-- ZÁLOŽKY (Navs & tabs) -->
+      <ul class="nav nav-pills mb-3" id="disciplinyTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="swim-tab" data-bs-toggle="tab" data-bs-target="#swim" type="button" role="tab"><i class="bi bi-water me-1"></i>Plavání</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="bike-tab" data-bs-toggle="tab" data-bs-target="#bike" type="button" role="tab"><i class="bi bi-bicycle me-1"></i>Cyklistika</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="run-tab" data-bs-toggle="tab" data-bs-target="#run" type="button" role="tab"><i class="bi bi-person-walking me-1"></i>Běh</button>
+        </li>
+      </ul>
+
+      <div class="tab-content border rounded p-4 bg-light" id="disciplinyTabContent">
+        <div class="tab-pane fade show active" id="swim" role="tabpanel">
+          <h4>Plavecká část (1,9 km / 3,8 km)</h4>
+          <p>Základem je adaptace na plavání v neoprenu v otevřené vodě. Klíčové je trénovat zvedání hlavy pro navigaci k bójím (tzv. sighting) a draftování za soupeři, což šetří až 15 % energie.</p>
+          <ul>
+            <li>Doporučená kadence záběrů: 60–70 záběrů za minutu.</li>
+            <li>Zvládnutí přechodové zóny T1 (svlékání neoprenu v běhu).</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="bike" role="tabpanel">
+          <h4>Cyklistická časovka (90 km / 180 km)</h4>
+          <p>Rozhodující segment celého závodu. Klíčem k úspěchu není maximální rychlost v úvodu, ale stabilní watty pod anaerobním prahem (přibližně 70–75 % FTP) a pravidelný přísun sacharidů (až 90 g/hod).</p>
+          <ul>
+            <li>Pravidelná hydratace každých 15 minut.</li>
+            <li>Dodržování bezhákového pravidla (minimální rozestup 12 metrů).</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="run" role="tabpanel">
+          <h4>Závěrečný půlmaraton / maraton</h4>
+          <p>Tělo přechází ze sedla kola do vertikálního běžeckého pohybu. Zásadní je plynulá kadence kolem 175–185 kroků za minutu a zvládnutí přechodové zóny T2 (depa).</p>
+          <ul>
+            <li>První 2 kilometry běžet kontrolovaně, dokud se neprokrví běžecké svalstvo.</li>
+            <li>Využívat občerstvovací stanice na každých 2,5 km.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL OKNO -->
+    <div class="modal fade" id="regeneraceModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title" id="modalLabel"><i class="bi bi-activity text-warning me-2"></i>Post-závodní protokol</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h6>Optimalizace regenerace po závodě:</h6>
+            <ul class="mb-3">
+              <li><strong>Do 30 minut:</strong> 30 g bílkovin + 60 g rychlých sacharidů (regenerační nápoj).</li>
+              <li><strong>Do 2 hodin:</strong> Teplé komplexní jídlo bohaté na sodík, draslík a hořčík.</li>
+              <li><strong>Následující den:</strong> 30 minut lehkého vyplavání v bazénu pro podporu krevního oběhu.</li>
+            </ul>
+            <div class="alert alert-info py-2 small mb-0">Spánek alespoň 8,5 hodiny je základním předpokladem adaptace.</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PATIČKA -->
+  <footer class="bg-dark text-white py-4 mt-auto border-top border-secondary">
+    <div class="container text-center">
+      <p class="mb-1 fw-bold">TRIATHLON HUB © 2026</p>
+      <p class="small text-muted mb-0">Semestrální projekt pro responzivní webdesign v Bootstrapu 5</p>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
